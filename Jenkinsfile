@@ -21,6 +21,12 @@ pipeline{
 				echo "We are on pipeline as code module"
 			}
 		}
+			stage('5-Newdeploy'){
+			steps{
+				echo "This is a final deploy!!"
+			}
+		}
+		
 	}
 	
 }
