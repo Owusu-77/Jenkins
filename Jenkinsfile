@@ -14,6 +14,8 @@ pipeline{
 		stage('3-unitest'){
 			steps{
 				sh 'lscpu'
+                                sh 'pwd'
+                                sh 'whoami'
 			}
 		}
 		stage('4-deploy'){
