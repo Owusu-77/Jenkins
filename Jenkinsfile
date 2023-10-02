@@ -14,6 +14,8 @@ pipeline{
 		stage('3-unitest'){
 			steps{
 				sh 'lscpu'
+                                sh 'pwd'
+                                sh 'whoami'
 			}
 		}
 		stage('4-deploy'){
@@ -26,6 +28,10 @@ pipeline{
 				echo "This is a final deploy!!"
 			}
 		}
+		stage('6-Security Check'){
+			steps{
+				sh "bash -x /var/lib/jenkins/workspace/Team7-pipeline-Demo1/pipeline.sh"
+			}
 		
 	}
 	
