@@ -1,7 +1,7 @@
 pipeline{
 	agent any
 	stages{
-		stage(1-Clonecode){
+		stage(1-Clonecodes){
 			steps{
 				sh 'action1'
 			}
