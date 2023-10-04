@@ -1,39 +1,20 @@
 pipeline{
-	agent any 
+	agent any
 	stages{
-		stage('1-clonecode'){
+		stage(1-Clonecodes){
 			steps{
-				checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Team7-git-id', url: 'https://github.com/Owusu-77/Jenkins.git']])
+				sh 'action1'
 			}
 		}
-		stage('2-artifactbuild'){
+		stage(2-Build Artifact){
 			steps{
-				sh 'df -h'
+				sh 'action2'
 			}
 		}
-		stage('3-unitest'){
+		stage(3-Run Test){
 			steps{
-				sh 'lscpu'
-                                sh 'pwd'
-                                sh 'whoami'
+				sh 'action3'
 			}
 		}
-		stage('4-deploy'){
-			steps{
-				echo "We are on pipeline as code module"
-			}
-		}
-			stage('5-Newdeploy'){
-			steps{
-				echo "This is a final deploy!!"
-			}
-		}
-		stage('6-Security Check'){
-			steps{
-				sh "bash -x /var/lib/jenkins/workspace/Team7-pipeline-Demo1/pipeline.sh"
-			}
-		
-	}
-	
-}
+	}	
 }
